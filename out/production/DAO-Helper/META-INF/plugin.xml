@@ -1,0 +1,44 @@
+<idea-plugin>
+  <id>com.luozhihuan</id>
+  <name>dao-helper</name>
+  <version>1.0</version>
+  <vendor email="911648058@qq.com" url="https://www.fcbarcelona.com">none</vendor>
+
+  <description><![CDATA[
+      帮助你自动生成dao层代码,省去无用的copy过程,避免没必要的低级错误.<br>
+      <em>无</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      支持jdbcTemplate dao层代码自动生成.<br>
+      <em>无</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="DAOInsertAction" class="com.luozhihuan.DAOInsertAction" text="insert" description="auto gnenerate dao code">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+    <!-- Add your actions here -->
+    <action id="DAOGetByIdAction" class="com.luozhihuan.DAOSelectAction" text="select" description="auto gnenerate dao code">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+    <!-- Add your actions here -->
+    <action id="DAOUpdateAction" class="com.luozhihuan.DAOUpdateAction" text="update" description="auto gnenerate dao code">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
